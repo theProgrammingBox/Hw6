@@ -38,30 +38,30 @@ int main()
     cout << "Enter the ending index: ";
     cin >> end;
     Reverse(str, start, end);
-    cout << "Reversed string: " << str << "\n\n";
-    str = "abcdefghijksrqponmltuvwxyz";
+    cout << "Reversed string1: " << str << endl;
+    str = "abcdefghijklmnopqrstuvwxyz";
     IReverse(str, start, end);
-    cout << "IReverse String1: " << str << endl;
+    cout << "IReverse String1: " << str << "\n\n";
 
-    str = "abcdefghijksrqponmltuvwxyz";
+    str = "abcdefghijklmnopqrstuvwxyz";
     cout << "String2: " << str << endl;
     cout << "Enter the starting index: ";
     cin >> start;
     cout << "Enter the ending index: ";
     cin >> end;
     Reverse(str, start, end);
-    cout << "Reversed string: " << str << "\n\n";
-    str = "abcdefghijksrqponmltuvwxyz";
+    cout << "Reversed string2: " << str << endl;
+    str = "abcdefghijklmnopqrstuvwxyz";
     IReverse(str, start, end);
-    cout << "IReverse String2: " << str << endl;
+    cout << "IReverse String2: " << str << "\n\n";
 
-    str = "abcdefghijksrqponmltuvwxyz";
+    str = "abcdefghijklmnopqrstuvwxyz";
     cout << "String3: " << str << endl;
     Reverse(str, 0, str.length() - 1);
-    cout << "Reversed string: " << str << "\n\n";
-    str = "abcdefghijksrqponmltuvwxyz";
+    cout << "Reversed string3: " << str << endl;
+    str = "abcdefghijklmnopqrstuvwxyz";
     IReverse(str, 0, str.length() - 1);
-    cout << "IReverse String3: " << str << endl;
+    cout << "IReverse String3: " << str << "\n\n";
     return 0;
 }
 
@@ -83,7 +83,7 @@ int main()
 
 void Reverse(string &str, int start, int end)
 {
-    if (start <= end)
+    if (start < end)
     {
         char temp = str[start];
         str[start] = str[end];
@@ -92,12 +92,32 @@ void Reverse(string &str, int start, int end)
     }
 }
 
+/*************************************************************************
+ * Method IReverse: Class none
+ * ----------------------------------------------------------------------
+ * This function will reverse some string or character array using
+ * iteration given two indices (starting and ending).
+ * ----------------------------------------------------------------------
+ * PRE-CONDITIONS
+ * 		str:      The string or character array
+ *      start:    The starting index
+ *      end:      The ending index
+ *
+ * POST-CONDITIONS
+ *      str:      The new string or character array is returned through
+ *                the reference parameter str
+ *************************************************************************/
+
 void IReverse(string &str, int start, int end)
 {
-    for (int i = start; i < end / 2; i++)
+    int startIndex = start;
+    int endIndex = end;
+    while (startIndex < endIndex)
     {
-        char temp = str[i];
-        str[i] = str[end - i];
-        str[end - i] = temp;
+        char temp = str[startIndex];
+        str[startIndex] = str[endIndex];
+        str[endIndex] = temp;
+        startIndex++;
+        endIndex--;
     }
 }
