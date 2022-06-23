@@ -1,35 +1,3 @@
-/*
-HW06 - Recursion
-1.  Obtain the following string: abcdefghijklmnopqrstuvwxyz
-(as input or using initialization)
-2.  Using recursion, write a reverse function that reverses the
-characters in a string or character array given two indices
-(starting and ending).  The string or the character array
-should reflect the reversal.
-3.  Read indices as input
- 11,18 (i.e. letters 12,19)
-4.  Call the reverse function to reverse letters: 12-19
-5.  Read indices as input
- 4,22 (i.e. letters 5,23)
-6.  Call the reverse function to reverse letters: 5,23
-7.  Using the reverse function, reverse the alphabet
-8.  Print the reversed string or character array.
-
-Your output should contain:
-
-abcdefghijksrqponmltuvwxyz
-abcdwvutsrqponmlkjihgfexyz
-zyxwvutsrqponmlkjihgfedcba
-
-You should only have one execution.
-
-Write an implementation for the reverse function using a loop.
-What are the differences between the recursive and iterative
-approaches? Test your iterative reverse function and
-demonstrate that its output is identical to the recursive
-implementations output.
-*/
-
 /*************************************************************************
  * AUTHOR     	 : Justin Gea
  * Assignment #5 : Recursion
@@ -61,13 +29,28 @@ void Reverse(string &str, int start, int end);
 int main()
 {
     string str = "abcdefghijklmnopqrstuvwxyz";
+    cout << "String1: " << str << endl;
     int start, end;
     cout << "Enter the starting index: ";
     cin >> start;
     cout << "Enter the ending index: ";
     cin >> end;
     Reverse(str, start, end);
-    cout << str << endl;
+    cout << "Reversed string: " << str << "\n\n";
+    
+    str = "abcdefghijksrqponmltuvwxyz";
+    cout << "String2: " << str << endl;
+    cout << "Enter the starting index: ";
+    cin >> start;
+    cout << "Enter the ending index: ";
+    cin >> end;
+    Reverse(str, start, end);
+    cout << "Reversed string: " << str << "\n\n";
+
+    str = "abcdefghijksrqponmltuvwxyz";
+    cout << "String3: " << str << endl;
+    Reverse(str, 0, str.length() - 1);
+    cout << "Reversed string: " << str << "\n\n";
     return 0;
 }
 
