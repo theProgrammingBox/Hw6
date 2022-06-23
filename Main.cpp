@@ -89,7 +89,7 @@ int main()
 
 void Reverse(string &str, int start, int end)
 {
-    if (start < end)
+    if (start <= end)
     {
         char temp = str[start];
         str[start] = str[end];
