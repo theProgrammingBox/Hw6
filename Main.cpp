@@ -10,6 +10,8 @@
 
 void Reverse(string &str, int start, int end);
 
+void IReverse(string &str, int start, int end);
+
 /**********************************************************
  *
  * Recursion
@@ -37,7 +39,10 @@ int main()
     cin >> end;
     Reverse(str, start, end);
     cout << "Reversed string: " << str << "\n\n";
-    
+    str = "abcdefghijksrqponmltuvwxyz";
+    IReverse(str, start, end);
+    cout << "IReverse String1: " << str << endl;
+
     str = "abcdefghijksrqponmltuvwxyz";
     cout << "String2: " << str << endl;
     cout << "Enter the starting index: ";
@@ -46,11 +51,17 @@ int main()
     cin >> end;
     Reverse(str, start, end);
     cout << "Reversed string: " << str << "\n\n";
+    str = "abcdefghijksrqponmltuvwxyz";
+    IReverse(str, start, end);
+    cout << "IReverse String2: " << str << endl;
 
     str = "abcdefghijksrqponmltuvwxyz";
     cout << "String3: " << str << endl;
     Reverse(str, 0, str.length() - 1);
     cout << "Reversed string: " << str << "\n\n";
+    str = "abcdefghijksrqponmltuvwxyz";
+    IReverse(str, 0, str.length() - 1);
+    cout << "IReverse String3: " << str << endl;
     return 0;
 }
 
@@ -78,5 +89,15 @@ void Reverse(string &str, int start, int end)
         str[start] = str[end];
         str[end] = temp;
         Reverse(str, start + 1, end - 1);
+    }
+}
+
+void IReverse(string &str, int start, int end)
+{
+    for (int i = start; i < end / 2; i++)
+    {
+        char temp = str[i];
+        str[i] = str[end - i];
+        str[end - i] = temp;
     }
 }
