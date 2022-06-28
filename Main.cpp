@@ -1,6 +1,6 @@
 /*************************************************************************
  * AUTHOR     	 : Justin Gea
- * Assignment #5 : Recursion
+ * Assignment #6 : Recursion
  * CLASS      	 : CS 1C
  * SECTION    	 : MTWTTH 03:00pm - 05:35pm
  * DUE DATE   	 : 06/28/2022
